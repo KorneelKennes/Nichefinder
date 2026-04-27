@@ -71,3 +71,5 @@ $RECYCLE.BIN/
 # (uncomment these if you ever drop scratch material into the repo)
 # /scratch/
 # /local-notes/
+
+.vercel

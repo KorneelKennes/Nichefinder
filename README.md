@@ -8,6 +8,9 @@ A free, no-signup AI tool that takes an aspiring Etsy seller from
 *"I have no idea what to sell"* to **three matched niches with real numbers behind them** —
 in under a minute.
 
+### → [**Live demo · nichefinder-nine.vercel.app**](https://nichefinder-nine.vercel.app/) ←
+
+[![Live on Vercel](https://img.shields.io/badge/Live-nichefinder--nine.vercel.app-000000?logo=vercel&logoColor=white)](https://nichefinder-nine.vercel.app/)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![TypeScript 5](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Claude Sonnet 4.6](https://img.shields.io/badge/Claude-Sonnet%204.6-D97757)](https://www.anthropic.com/)
@@ -16,7 +19,9 @@ in under a minute.
 
 <br/>
 
-<img src="docs/screenshots/01-desktop-landing.jpg" alt="NicheFinder landing page" width="100%" />
+<a href="https://nichefinder-nine.vercel.app/">
+  <img src="docs/screenshots/01-desktop-landing.jpg" alt="NicheFinder landing page" width="100%" />
+</a>
 
 </div>
 
@@ -102,8 +107,8 @@ No database. No auth. No tracking pixels.
 Requires Node 20+ and npm.
 
 ```bash
-git clone https://github.com/<your-username>/nichefinder.git
-cd nichefinder
+git clone https://github.com/KorneelKennes/Nichefinder.git
+cd Nichefinder
 npm install
 
 # Optional — set up live API keys (without these the app returns mock data)
