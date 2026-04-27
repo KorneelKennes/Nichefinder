@@ -37,7 +37,7 @@ function scoreOne(niche: CatalogNiche, profile: SellerProfile): number {
   } else if (skillOverlap > 0) {
     score += 6 + skillOverlap * 2;
   } else if (profile.q5.includes("zero")) {
-    // Beginner explicitly opting in to learning — small allowance
+    // Beginner explicitly opting in to learning, small allowance
     score += 2;
   } else {
     return -1;
@@ -59,7 +59,7 @@ function scoreOne(niche: CatalogNiche, profile: SellerProfile): number {
     score += 2;
   }
 
-  // Budget / startup-cost match (rough — high-margin digital plays well at low budget)
+  // Budget / startup-cost match (rough, high-margin digital plays well at low budget)
   const budget = BUDGET_WEIGHTS[profile.q3];
   if (niche.modeled_net_margin_pct >= 0.8 && budget <= 2) score += 4;
   if (niche.inventory_models[0] === "stock" && budget < 3) score -= 4;

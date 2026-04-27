@@ -18,15 +18,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NicheFinder — See what sells before you make it",
+  title: "NicheFinder, See what sells before you make it",
   description:
     "A free AI tool that helps aspiring Etsy sellers find their niche. Eight questions, three matched niches, grounded in live search-demand signals.",
   metadataBase: new URL("https://nichefinder.io"),
   icons: { icon: "/icon.svg" },
   openGraph: {
-    title: "NicheFinder — See what sells before you make it",
+    title: "NicheFinder, See what sells before you make it",
     description:
-      "Eight questions. Three Etsy niches matched to your time, budget, skills, and taste — grounded in live search-demand signals.",
+      "Eight questions. Three Etsy niches matched to your time, budget, skills, and taste, grounded in live search-demand signals.",
     type: "website",
   },
 };

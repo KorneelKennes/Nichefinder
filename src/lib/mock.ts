@@ -23,7 +23,7 @@ export const MOCK_NICHES: ResultNiche[] = [
     },
     confidence: "high",
     missing_signals: [],
-    why: "Because you've got 5–15 hours a week and you're comfortable in Canva, this is digital-only — design once, sell forever. The modern minimalist + boho overlap maps to a sub-niche where Etsy currently has 12,400 listings (mid-density), and Pinterest's \"boho wedding invitation\" pin volume grew 38% over the last 12 months. Top sellers carry 200+ reviews and listings averaging $24, which is comfortably inside your side-income target.",
+    why: "Because you've got 5–15 hours a week and you're comfortable in Canva, this is digital-only, design once, sell forever. The modern minimalist + boho overlap maps to a sub-niche where Etsy currently has 12,400 listings (mid-density), and Pinterest's \"boho wedding invitation\" pin volume grew 38% over the last 12 months. Top sellers carry 200+ reviews and listings averaging $24, which is comfortably inside your side-income target.",
     startup_cost: "$80–150 (Canva Pro + initial listings)",
     time_to_first_sale: "2–4 weeks with consistent uploads",
     product_ideas: [
@@ -70,7 +70,7 @@ export const MOCK_NICHES: ResultNiche[] = [
     },
     confidence: "high",
     missing_signals: [],
-    why: "Your minimalist aesthetic and Canva skill align here cleanly — buyers want simple line drawings, neutral palettes, and gallery-wall sets. With 38,000 active listings the category is denser than wedding, but top sellers concentrate at the bundled-set level (e.g. \"set of 6 boho prints\") where you can differentiate.",
+    why: "Your minimalist aesthetic and Canva skill align here cleanly, buyers want simple line drawings, neutral palettes, and gallery-wall sets. With 38,000 active listings the category is denser than wedding, but top sellers concentrate at the bundled-set level (e.g. \"set of 6 boho prints\") where you can differentiate.",
     startup_cost: "$80–150 (Canva Pro + mockup tool)",
     time_to_first_sale: "3–6 weeks",
     product_ideas: [
@@ -116,7 +116,7 @@ export const MOCK_NICHES: ResultNiche[] = [
     },
     confidence: "medium",
     missing_signals: ["pinterest pin volume"],
-    why: "This is the long-tail option — smaller volume, but your boho aesthetic reads strongly here and competition concentrates in literal nursery animal prints rather than the editorial direction you'd take. With ~8,200 listings and top sellers showing modest review counts, there's room for a clearer brand voice.",
+    why: "This is the long-tail option, smaller volume, but your boho aesthetic reads strongly here and competition concentrates in literal nursery animal prints rather than the editorial direction you'd take. With ~8,200 listings and top sellers showing modest review counts, there's room for a clearer brand voice.",
     startup_cost: "$80–120",
     time_to_first_sale: "4–8 weeks",
     product_ideas: [
@@ -147,5 +147,5 @@ export const MOCK_NICHES: ResultNiche[] = [
 export const MOCK_RESPONSE: GenerateResponse = {
   niches: MOCK_NICHES,
   source: "mock",
-  warning: "Running with mock data — set ANTHROPIC_API_KEY and FIRECRAWL_API_KEY in .env.local for live recommendations.",
+  warning: "Running with mock data, set ANTHROPIC_API_KEY and FIRECRAWL_API_KEY in .env.local for live recommendations.",
 };

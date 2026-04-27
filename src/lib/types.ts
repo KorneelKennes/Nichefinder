@@ -29,7 +29,7 @@ export type CatalogNiche = {
   default_search_query: string;
   etsy_search_url: string;
   hero_img: string;
-  // What this seller actually needs from Creative Fabrica — not the product
+  // What this seller actually needs from Creative Fabrica, not the product
   // they're selling but the design assets that support making/marketing it.
   // (Templates to remix for digital sellers; clipart/SVGs for POD sellers;
   // mockups, fonts, labels, or embroidery patterns for handmade sellers.)

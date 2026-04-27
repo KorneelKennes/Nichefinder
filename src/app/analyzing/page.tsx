@@ -95,7 +95,7 @@ export default function AnalyzingPage() {
     };
     requestAnimationFrame(tick);
 
-    // No cleanup that cancels the rAF — under React strict mode that would
+    // No cleanup that cancels the rAF, under React strict mode that would
     // kill the chain after the dev double-mount and the page would freeze at
     // 0%. The `cancelled` flag stays false; if the route changes for some
     // other reason, setPct on an unmounted component is a no-op in React 18+.

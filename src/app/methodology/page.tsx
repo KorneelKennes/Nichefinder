@@ -5,7 +5,7 @@ import { Nav, Footer } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "How we score a niche · NicheFinder",
   description:
-    "Every niche is scored on eight components — some grounded in live Etsy data, some modeled, some reasoned by Claude. We tell you which is which.",
+    "Every niche is scored on eight components, some grounded in live Etsy data, some modeled, some reasoned by Claude. We tell you which is which.",
 };
 
 export default function MethodologyPage() {
@@ -57,7 +57,7 @@ export default function MethodologyPage() {
             <div className="threshold-grid">
               <div>
                 <span className="display tabular" style={{ fontSize: 32, color: "var(--sage)" }}>80–100</span>
-                <div className="muted">High confidence — enter</div>
+                <div className="muted">High confidence, enter</div>
               </div>
               <div>
                 <span className="display tabular" style={{ fontSize: 32, color: "var(--brass)" }}>60–79</span>
@@ -65,7 +65,7 @@ export default function MethodologyPage() {
               </div>
               <div>
                 <span className="display tabular" style={{ fontSize: 32, color: "var(--clay)" }}>40–59</span>
-                <div className="muted">Risky — unique angle only</div>
+                <div className="muted">Risky, unique angle only</div>
               </div>
               <div>
                 <span className="display tabular" style={{ fontSize: 32, color: "var(--terracotta)" }}>&lt; 40</span>
@@ -80,7 +80,7 @@ export default function MethodologyPage() {
           <p style={{ fontSize: 17, marginTop: 12, lineHeight: 1.65 }}>
             We do not claim to have analyzed every Etsy listing. We do not have private sales data.
             Etsy actively blocks third-party scrapers, so our live signal is Google search
-            presence — how many top results for a niche query land on Etsy, and the buyer language
+            presence, how many top results for a niche query land on Etsy, and the buyer language
             those results use. Margin and seasonality are modeled from category averages and the
             2026 Etsy fee stack. Whitespace and fit are reasoned by Claude across your profile and
             the catalog. When a signal is missing for a candidate, we surface that confidence

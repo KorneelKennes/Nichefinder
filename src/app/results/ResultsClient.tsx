@@ -16,7 +16,7 @@ function EmailCaptureSection() {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.includes("@")) return;
-    // MVP stub — real wiring happens in spec § 11 phase 8 (Resend).
+    // MVP stub, real wiring happens in spec § 11 phase 8 (Resend).
     setSubmitted(true);
   };
 
@@ -44,7 +44,7 @@ function EmailCaptureSection() {
               color: "var(--brass)",
             }}
           >
-            Thanks — we&apos;ll be in touch when the next batch drops.
+            Thanks, we&apos;ll be in touch when the next batch drops.
           </div>
         ) : (
           <form className="email-row" onSubmit={onSubmit}>

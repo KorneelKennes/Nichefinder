@@ -23,7 +23,7 @@ function writeJSON<T>(key: string, value: T): void {
   try {
     sessionStorage.setItem(key, JSON.stringify(value));
   } catch {
-    /* quota exceeded — ignore */
+    /* quota exceeded, ignore */
   }
 }
 
@@ -77,7 +77,7 @@ export function getStoredResults(): GenerateResponse | null {
   if (!raw) return null;
   const parsed = generateResponseSchema.safeParse(raw);
   if (!parsed.success) {
-    // Stale result from a previous schema version — drop it instead of crashing the page.
+    // Stale result from a previous schema version, drop it instead of crashing the page.
     if (typeof window !== "undefined") sessionStorage.removeItem(RESULTS_KEY);
     return null;
   }

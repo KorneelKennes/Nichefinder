@@ -30,7 +30,7 @@ export default function LandingPage() {
               animationDelay: "140ms",
             }}
           >
-            Eight questions. Three Etsy niches matched to your time, budget, skills, and taste — grounded in live
+            Eight questions. Three Etsy niches matched to your time, budget, skills, and taste, grounded in live
             search-demand signals.
           </p>
           <div
@@ -84,7 +84,7 @@ export default function LandingPage() {
           <div className="label">HOW IT WORKS</div>
           <div className="nf-steps">
             {[
-              { n: "01", t: "Tell us about you", d: "Eight questions, 60 seconds. The questions matter — they're how we avoid generic answers." },
+              { n: "01", t: "Tell us about you", d: "Eight questions, 60 seconds. The questions matter, they're how we avoid generic answers." },
               { n: "02", t: "We measure live demand", d: "We check Google search presence, related buyer language, and competitive density for niches that match your profile." },
               { n: "03", t: "Get three niches with reasoning", d: "Each comes with a score, our methodology, and five product ideas to start with." },
             ].map((s) => (

@@ -6,7 +6,7 @@ import { Nav, Footer } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "What should you sell on Etsy? · For beginners · NicheFinder",
   description:
-    "You don't have a shop yet. You have an interest, maybe equipment, definitely no idea what to make first. We help you find out — in 60 seconds.",
+    "You don't have a shop yet. You have an interest, maybe equipment, definitely no idea what to make first. We help you find out, in 60 seconds.",
 };
 
 export default function BeginnersPage() {
@@ -37,7 +37,7 @@ export default function BeginnersPage() {
           }}
         >
           You don&apos;t have a shop yet. You have an interest, maybe equipment, definitely no idea
-          what to make first. We help you find out — in 60 seconds.
+          what to make first. We help you find out, in 60 seconds.
         </p>
         <Link
           className="btn btn-primary btn-lg fade-up"
@@ -60,7 +60,7 @@ export default function BeginnersPage() {
             },
             {
               t: "Honest competition data",
-              d: "We show you how many listings already exist and whether the top sellers are entrenched — so you don't enter a dead-end.",
+              d: "We show you how many listings already exist and whether the top sellers are entrenched, so you don't enter a dead-end.",
             },
             {
               t: "Aesthetic over guesswork",

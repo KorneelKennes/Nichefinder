@@ -1,5 +1,5 @@
 /* Firecrawl v4 client. Etsy aggressively bot-blocks direct scrapes (even with
- * stealth proxy), so we pivot to Firecrawl's search() endpoint instead — it
+ * stealth proxy), so we pivot to Firecrawl's search() endpoint instead, it
  * hits Google search and returns SERP results, which lets us measure Etsy's
  * presence in a niche without scraping Etsy directly.
  *

@@ -1,4 +1,4 @@
-/* Quiz schema (8 Qs across 5 steps) — typed version of the prototype's quiz-data.js */
+/* Quiz schema (8 Qs across 5 steps), typed version of the prototype's quiz-data.js */
 
 import type { SellerProfile } from "@/lib/types";
 
@@ -68,7 +68,7 @@ export const NF_QUIZ: {
       layout: "tile-grid-2",
       options: [
         { v: "passion", label: "A creative side project that pays for itself", icon: "fa-solid fa-seedling" },
-        { v: "side", label: "Real side income — a few hundred to a few thousand a month", icon: "fa-solid fa-coins" },
+        { v: "side", label: "Real side income, a few hundred to a few thousand a month", icon: "fa-solid fa-coins" },
         { v: "fulltime", label: "Replace my day job within a year or two", icon: "fa-solid fa-rocket" },
         { v: "brand", label: "Build a brand I'm proud of, money is secondary", icon: "fa-solid fa-feather-pointed" },
       ],
@@ -106,14 +106,14 @@ export const NF_QUIZ: {
       key: "q4",
       type: "single",
       headline: ["How do you want to ", { em: "handle" }, " products?"],
-      sub: "There's no wrong answer — this just shapes what we recommend.",
+      sub: "There's no wrong answer, this just shapes what we recommend.",
       layout: "tile-grid-2",
       options: [
         { v: "digital", label: "Digital downloads only", hint: "Highest margin, lowest effort. Saturated in some categories.", icon: "fa-solid fa-cloud-arrow-down" },
         { v: "pod", label: "Print-on-demand", hint: "Partner prints and ships for me (Printful, Printify).", icon: "fa-solid fa-shirt" },
         { v: "made", label: "Made-to-order by hand", hint: "Highest perceived value. Time-intensive.", icon: "fa-solid fa-hand-sparkles" },
         { v: "stock", label: "Stock physical inventory", hint: "Capital-intensive. Best margins on physical goods.", icon: "fa-solid fa-boxes-stacked" },
-        { v: "unsure", label: "Not sure yet — show me what fits", hint: "We'll keep it open.", icon: "fa-solid fa-compass" },
+        { v: "unsure", label: "Not sure yet, show me what fits", hint: "We'll keep it open.", icon: "fa-solid fa-compass" },
       ],
       required: true,
     },
@@ -121,7 +121,7 @@ export const NF_QUIZ: {
       key: "q5",
       type: "multi",
       headline: ["Which of these can you ", { em: "actually" }, " do?"],
-      sub: "Check all that apply — be honest, not aspirational.",
+      sub: "Check all that apply, be honest, not aspirational.",
       layout: "checks-grouped",
       groups: [
         {
@@ -149,7 +149,7 @@ export const NF_QUIZ: {
           options: [
             { v: "photo", label: "Photography" },
             { v: "lettering", label: "Hand lettering or calligraphy" },
-            { v: "zero", label: "I'm starting from zero — teach me as we go" },
+            { v: "zero", label: "I'm starting from zero, teach me as we go" },
           ],
         },
       ],
@@ -201,7 +201,7 @@ export const NF_QUIZ: {
       key: "q8",
       type: "single",
       headline: ["When does this need to ", { em: "start" }, " working?"],
-      sub: "No judgment — this changes which niches we recommend.",
+      sub: "No judgment, this changes which niches we recommend.",
       layout: "tile-list",
       options: [
         { v: "30-days", label: "Next 30 days", hint: "I need momentum fast", icon: "fa-solid fa-bolt" },

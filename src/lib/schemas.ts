@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// All free-form arrays are length-capped and per-string-capped — these
+// All free-form arrays are length-capped and per-string-capped, these
 // strings end up interpolated into the Claude prompt, so we don't want a
 // crafted profile to either inflate token usage or carry jailbreak text.
 const tagString = z.string().min(1).max(80).regex(/^[A-Za-z0-9\- _]+$/);
@@ -27,7 +27,7 @@ export const subScoresSchema = z.object({
   whitespace_bonus: z.number(),
 });
 
-// Permissive on the Claude side — the model often deviates ±1 item or adds
+// Permissive on the Claude side, the model often deviates ±1 item or adds
 // prose to short fields. Orchestrator slices/normalizes downstream.
 export const claudeNicheSchema = z.object({
   id: z.string().min(1).max(160),

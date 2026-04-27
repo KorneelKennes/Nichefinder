@@ -20,7 +20,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Fallback hero image used only when a Claude output references an id that
-// isn't in the catalog (shouldn't happen — system prompt forbids inventing).
+// isn't in the catalog (shouldn't happen, system prompt forbids inventing).
 const FALLBACK_HERO_IMG =
   "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=1200&q=80&auto=format&fit=crop";
 
@@ -114,7 +114,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     return Response.json(res);
   }
 
-  // Firecrawl in parallel (or skip if no key — Claude still gets candidate metadata)
+  // Firecrawl in parallel (or skip if no key, Claude still gets candidate metadata)
   const signals: (FirecrawlSignal | null)[] = await Promise.all(
     candidates.map((n) =>
       hasFirecrawlKey ? scrapeEtsySearch(n.default_search_query) : Promise.resolve(null)
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     return Response.json(
       {
         ...MOCK_RESPONSE,
-        warning: "AI synthesis failed — showing demo recommendations. Try again in a moment.",
+        warning: "AI synthesis failed, showing demo recommendations. Try again in a moment.",
       } satisfies GenerateResponse,
       { status: 200 }
     );
@@ -149,7 +149,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   const warning =
     !hasFirecrawlKey
-      ? "Firecrawl key not set — recommendations are scored without live Etsy data."
+      ? "Firecrawl key not set, recommendations are scored without live Etsy data."
       : undefined;
 
   const response: GenerateResponse = {
