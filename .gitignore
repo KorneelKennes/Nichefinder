@@ -1,0 +1,73 @@
+# ============================================================
+# NicheFinder — .gitignore
+# ============================================================
+
+# --- Node / package managers ------------------------------------
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.npm/
+
+# --- Next.js ----------------------------------------------------
+/.next/
+/out/
+/build
+.next-env.d.ts
+next-env.d.ts
+
+# --- TypeScript -------------------------------------------------
+*.tsbuildinfo
+
+# --- Environment ------------------------------------------------
+# Track .env.example as the documented contract; everything else stays local.
+.env
+.env.*
+!.env.example
+
+# --- Testing / coverage ----------------------------------------
+/coverage
+/playwright-report
+/test-results
+.playwright-mcp/
+
+# --- Logs ------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# --- Editors / IDEs --------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS files --------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Vercel / deployment --------------------------------------
+.vercel
+.netlify
+
+# --- Misc ------------------------------------------------------
+*.pem
+*.local
+.tmp/
+
+# --- Local-only working files ---------------------------------
+# (uncomment these if you ever drop scratch material into the repo)
+# /scratch/
+# /local-notes/
