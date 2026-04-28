@@ -4,7 +4,7 @@
 
 **See what *sells* before you make it.**
 
-A free, no-signup AI tool that takes an aspiring Etsy seller from
+A free AI tool that takes an aspiring Etsy seller from
 *"I have no idea what to sell"* to **three matched niches with real numbers behind them** -
 in under a minute.
 

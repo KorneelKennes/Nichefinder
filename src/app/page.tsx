@@ -11,7 +11,7 @@ export default function LandingPage() {
       <section className="nf-hero">
         <div className="container-narrow" style={{ paddingTop: "clamp(60px, 10vw, 120px)", paddingBottom: "clamp(40px, 6vw, 80px)" }}>
           <div className="label fade-up" style={{ textAlign: "center", marginBottom: 28 }}>
-            FREE · NO SIGNUP UNTIL THE END · 60 SECONDS
+            FREE · 60 SECONDS
           </div>
           <Display
             parts={["See what ", { em: "sells " }, "before you make it."]}
