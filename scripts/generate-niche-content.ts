@@ -9,7 +9,12 @@
  * Cost: ~25 niches × ~1.5K input + ~600 output tokens ≈ a few cents.
  */
 
-import "dotenv/config";
+// Match Next.js's env-file precedence: .env.local first (wins), then .env.
+// dotenv won't override an already-set var, so the order matters.
+import { config as loadEnv } from "dotenv";
+loadEnv({ path: ".env.local" });
+loadEnv({ path: ".env" });
+
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
