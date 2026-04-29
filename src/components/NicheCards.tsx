@@ -3,8 +3,13 @@
 import { useState } from "react";
 import { Pill, Expand, ScoreBar, ScoreRing, ScoreDotsViz, Display } from "@/components/primitives";
 import { SCORE_LABELS } from "@/data/quiz";
+import { NICHE_CONTENT } from "@/data/niche-content";
 import type { ResultNiche } from "@/lib/types";
 import { cfMeta, buildShareUrls, copyToClipboard } from "@/lib/share";
+
+function shareDescriptionFor(n: ResultNiche): string {
+  return NICHE_CONTENT[n.id]?.share_description ?? `${n.name}: a niche on nichefinder.`;
+}
 
 type Viz = "bar" | "ring" | "dots";
 
@@ -68,7 +73,7 @@ export function HeroNicheCard({
   const subOrder = ["demand", "competition", "margin"] as const;
   const cf = cfMeta(n);
   const [copied, setCopied] = useState(false);
-  const share = buildShareUrls({ slug: n.id, shareDescription: `${n.name}: a niche on nichefinder.` });
+  const share = buildShareUrls({ slug: n.id, shareDescription: shareDescriptionFor(n) });
 
   const onCopy = async () => {
     const ok = await copyToClipboard(share.pageUrl);
@@ -305,7 +310,7 @@ export function CompactNicheCard({
   viz: Viz;
   onExpand: () => void;
 }) {
-  const share = buildShareUrls({ slug: n.id, shareDescription: `${n.name}: a niche on nichefinder.` });
+  const share = buildShareUrls({ slug: n.id, shareDescription: shareDescriptionFor(n) });
   return (
     <article className="card niche-compact">
       <div className="niche-compact-img">

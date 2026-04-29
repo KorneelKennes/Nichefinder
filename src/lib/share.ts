@@ -6,7 +6,11 @@
 
 import type { InventoryModel } from "@/lib/types";
 
-const FALLBACK_ORIGIN = "http://localhost:3000";
+// Server-side fallback when NEXT_PUBLIC_SITE_URL is unset. Use the production
+// origin (matches src/app/sitemap.ts and src/app/layout.tsx metadataBase) so
+// builds without the env var still emit valid canonicals/og:url. Local dev
+// can override via .env.local; the .env.example placeholder is localhost.
+const FALLBACK_ORIGIN = "https://nichefinder.io";
 
 function siteOrigin(): string {
   if (typeof window !== "undefined") {
