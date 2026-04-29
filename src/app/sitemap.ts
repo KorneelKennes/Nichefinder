@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { NICHE_CATALOG } from "@/data/catalog";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://nichefinder.io";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://nichefinder.shop";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

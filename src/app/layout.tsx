@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "NicheFinder, See what sells before you make it",
   description:
     "A free AI tool that helps aspiring Etsy sellers find their niche. Eight questions, three matched niches, grounded in live search-demand signals.",
-  metadataBase: new URL("https://nichefinder.io"),
+  metadataBase: new URL("https://nichefinder.shop"),
   icons: { icon: "/icon.svg" },
   openGraph: {
     title: "NicheFinder, See what sells before you make it",

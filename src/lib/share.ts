@@ -10,7 +10,7 @@ import type { InventoryModel } from "@/lib/types";
 // origin (matches src/app/sitemap.ts and src/app/layout.tsx metadataBase) so
 // builds without the env var still emit valid canonicals/og:url. Local dev
 // can override via .env.local; the .env.example placeholder is localhost.
-const FALLBACK_ORIGIN = "https://nichefinder.io";
+const FALLBACK_ORIGIN = "https://nichefinder.shop";
 
 function siteOrigin(): string {
   if (typeof window !== "undefined") {

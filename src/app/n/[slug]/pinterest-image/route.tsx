@@ -141,7 +141,7 @@ export async function GET(
               color: MUTED,
             }}
           >
-            nichefinder.io
+            nichefinder.shop
           </div>
         </div>
       </div>
