@@ -84,3 +84,19 @@ export const generateResponseSchema = z.object({
     .min(1)
     .max(3),
 });
+
+// Static per-niche prose. Validated when generating src/data/niche-content.ts
+// and (loosely) when read at build time, to catch hand-edits that drift.
+export const nicheContentSchema = z.object({
+  description: z.string().min(200).max(900),
+  who_this_is_for: z.string().min(200).max(900),
+  why_it_works: z.string().min(150).max(700),
+  product_ideas: z.array(z.string().min(1).max(280)).length(5),
+  what_to_avoid: z.string().min(120).max(700),
+  meta_title: z.string().min(20).max(80),
+  meta_description: z.string().min(80).max(200),
+  pin_tagline: z.string().min(8).max(80),
+  share_description: z.string().min(40).max(280),
+});
+
+export const nicheContentMapSchema = z.record(z.string(), nicheContentSchema);

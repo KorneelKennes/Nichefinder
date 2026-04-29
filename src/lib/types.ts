@@ -82,3 +82,22 @@ export type GenerateResponse = {
   source: "claude" | "mock";
   warning?: string;
 };
+
+/**
+ * Static prose for each per-niche guide page. Generated once via
+ * scripts/generate-niche-content.ts and committed to src/data/niche-content.ts.
+ * Keys must cover every NICHE_CATALOG[i].id.
+ */
+export type NicheContent = {
+  description: string;          // 80-100 words, page section "What this is"
+  who_this_is_for: string;      // 80-100 words, page section "Who this is for"
+  why_it_works: string;         // 60-80 words, page section "Why it works right now"
+  product_ideas: string[];      // exactly 5 items, page section "What to start with"
+  what_to_avoid: string;        // 50-80 words, page section "Watch-outs"
+  meta_title: string;           // 50-60 chars, <title>
+  meta_description: string;     // 150-160 chars, <meta description>
+  pin_tagline: string;          // 4-7 words, used on the Pinterest pin
+  share_description: string;    // 1-2 sentences, used in Pinterest "Pin It" URL description
+};
+
+export type NicheContentMap = Record<string, NicheContent>;
