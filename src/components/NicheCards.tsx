@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Pill, Expand, ScoreBar, ScoreRing, ScoreDotsViz, Display } from "@/components/primitives";
 import { SCORE_LABELS } from "@/data/quiz";
 import type { ResultNiche } from "@/lib/types";
+import { cfMeta } from "@/lib/share";
 
 type Viz = "bar" | "ring" | "dots";
 
@@ -53,35 +54,6 @@ export function colorFor(value: number, max: number): string {
   if (pct >= 0.5) return "brass";
   if (pct >= 0.3) return "clay";
   return "terracotta";
-}
-
-// Creative Fabrica search: each catalog entry carries a hand-tuned `cf_query`
-// that points to design assets the seller actually needs (templates to remix,
-// SVGs/clipart for POD designs, mockups + fonts + label templates for handmade
-// makers). The button label is conditional on inventory model so it reads
-// honestly for each kind of niche.
-function cfMeta(n: ResultNiche): { url: string; label: string; sub: string } {
-  const query = n.cf_query || n.name;
-  let label: string;
-  switch (n.inventory_model) {
-    case "pod":
-      label = "Find graphics for your designs";
-      break;
-    case "made":
-    case "stock":
-      label = "Find fonts & mockups for your shop";
-      break;
-    case "digital":
-    case "unsure":
-    default:
-      label = "Find templates to remix";
-      break;
-  }
-  return {
-    url: `https://www.creativefabrica.com/search/?query=${encodeURIComponent(query)}`,
-    label,
-    sub: "Creative Fabrica",
-  };
 }
 
 export function HeroNicheCard({
