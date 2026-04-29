@@ -23,7 +23,10 @@ import { nicheContentSchema } from "../src/lib/schemas";
 import type { CatalogNiche, NicheContent, NicheContentMap } from "../src/lib/types";
 
 const MODEL = "claude-sonnet-4-6";
-const MAX_TOKENS = 1500;
+// Output budget: ~500 words ≈ 800 tokens of prose + JSON overhead. 2000 leaves
+// comfortable headroom; truncation on a wordy niche would silently produce
+// invalid JSON because extractJson grabs the last `}` regardless.
+const MAX_TOKENS = 2000;
 const OUT_PATH = resolve(process.cwd(), "src/data/niche-content.ts");
 
 const SYSTEM_PROMPT = `You are a niche-research analyst writing static guide-page copy for an Etsy-niche-finder app called nichefinder.
@@ -85,6 +88,11 @@ async function generateOne(
       system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: buildUserPrompt(niche) }],
     });
+    if (msg.stop_reason === "max_tokens") {
+      console.warn(`  [${niche.id}] hit max_tokens — JSON likely truncated.`);
+      if (attempt === 0) return generateOne(client, niche, 1);
+      return null;
+    }
     raw = msg.content
       .filter((b) => b.type === "text")
       .map((b) => (b as { type: "text"; text: string }).text)
