@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Pill, Expand, ScoreBar, ScoreRing, ScoreDotsViz, Display } from "@/components/primitives";
 import { SCORE_LABELS } from "@/data/quiz";
 import type { ResultNiche } from "@/lib/types";
-import { cfMeta } from "@/lib/share";
+import { cfMeta, buildShareUrls, copyToClipboard } from "@/lib/share";
 
 type Viz = "bar" | "ring" | "dots";
 
@@ -67,6 +67,16 @@ export function HeroNicheCard({
 }) {
   const subOrder = ["demand", "competition", "margin"] as const;
   const cf = cfMeta(n);
+  const [copied, setCopied] = useState(false);
+  const share = buildShareUrls({ slug: n.id, shareDescription: `${n.name}: a niche on nichefinder.` });
+
+  const onCopy = async () => {
+    const ok = await copyToClipboard(share.pageUrl);
+    if (ok) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <article className="card niche-hero">
@@ -259,14 +269,27 @@ export function HeroNicheCard({
         <button className="btn btn-secondary">
           <i className="fa-regular fa-bookmark" style={{ fontSize: 14 }} /> Save niche
         </button>
-        <button className="btn btn-ghost" style={{ marginLeft: "auto" }}>
+        <a
+          className="btn btn-ghost"
+          style={{ marginLeft: "auto" }}
+          href={share.pinterestUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Save to Pinterest"
+          aria-label="Save to Pinterest"
+        >
           <i className="fa-brands fa-pinterest-p" style={{ fontSize: 14 }} />
-        </button>
-        <button className="btn btn-ghost">
-          <i className="fa-brands fa-twitter" style={{ fontSize: 14 }} />
-        </button>
-        <button className="btn btn-ghost">
-          <i className="fa-solid fa-link" style={{ fontSize: 13 }} />
+        </a>
+        <button
+          className="btn btn-ghost"
+          onClick={onCopy}
+          title={copied ? "Copied!" : "Copy link"}
+          aria-label="Copy link to this niche"
+        >
+          <i
+            className={copied ? "fa-solid fa-check" : "fa-solid fa-link"}
+            style={{ fontSize: 13 }}
+          />
         </button>
       </div>
     </article>
@@ -282,6 +305,7 @@ export function CompactNicheCard({
   viz: Viz;
   onExpand: () => void;
 }) {
+  const share = buildShareUrls({ slug: n.id, shareDescription: `${n.name}: a niche on nichefinder.` });
   return (
     <article className="card niche-compact">
       <div className="niche-compact-img">
@@ -372,9 +396,16 @@ export function CompactNicheCard({
           >
             See full report →
           </button>
-          <button className="btn btn-ghost">
-            <i className="fa-regular fa-bookmark" />
-          </button>
+          <a
+            className="btn btn-ghost"
+            href={share.pinterestUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Save to Pinterest"
+            aria-label="Save to Pinterest"
+          >
+            <i className="fa-brands fa-pinterest-p" />
+          </a>
         </div>
       </div>
     </article>
