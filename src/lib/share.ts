@@ -4,7 +4,7 @@
  * surfaces share one source of truth.
  */
 
-import type { CatalogNiche, InventoryModel, ResultNiche } from "@/lib/types";
+import type { InventoryModel } from "@/lib/types";
 
 const FALLBACK_ORIGIN = "http://localhost:3000";
 
@@ -82,12 +82,12 @@ export async function copyToClipboard(text: string): Promise<boolean> {
  * when only the array is set, the first entry is used; when neither
  * is set, falls back to the digital/unsure label.
  */
-export function cfMeta(
-  niche:
-    | Pick<ResultNiche, "name" | "cf_query" | "inventory_model">
-    | Pick<CatalogNiche, "name" | "cf_query" | "inventory_models">
-    | { name: string; cf_query: string; inventory_model?: InventoryModel; inventory_models?: InventoryModel[] }
-): { url: string; label: string; sub: string } {
+export function cfMeta(niche: {
+  name: string;
+  cf_query: string;
+  inventory_model?: InventoryModel;
+  inventory_models?: InventoryModel[];
+}): { url: string; label: string; sub: string } {
   const inv = pickInventoryModel(niche);
   const query = niche.cf_query || niche.name;
   let label: string;
